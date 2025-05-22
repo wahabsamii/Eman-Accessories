@@ -29,7 +29,7 @@ export default function Home() {
 
       const AllProducts = async() => {
         try {
-          const allProducts = await axios.get("https://backend-psi-woad.vercel.app/get-allproducts?limit=8");
+          const allProducts = await axios.get("/get-allproducts?limit=8");
           if(allProducts.data.success){
                setProducts(allProducts.data.products)
           }
