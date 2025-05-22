@@ -18,7 +18,7 @@ export default function Home() {
       const navigate = useNavigate();
       const AllCategories = async () => {
         try {
-          const allcates = await axios.get('https://backend-psi-woad.vercel.app/all-categories');
+          const allcates = await axios.get('/all-categories');
           if(allcates.data.success){
             setCategories(allcates.data.allcategories)
           }
