@@ -18,7 +18,7 @@ export default function Home() {
       const navigate = useNavigate();
       const AllCategories = async () => {
         try {
-          const allcates = await axios.get('/all-categories');
+          const allcates = await axios.get('https://backend-psi-woad.vercel.app/all-categories');
           if(allcates.data.success){
             setCategories(allcates.data.allcategories)
           }
@@ -29,7 +29,7 @@ export default function Home() {
 
       const AllProducts = async() => {
         try {
-          const allProducts = await axios.get("/get-allproducts?limit=8");
+          const allProducts = await axios.get("https://backend-psi-woad.vercel.app/get-allproducts?limit=8");
           if(allProducts.data.success){
                setProducts(allProducts.data.products)
           }
@@ -38,11 +38,13 @@ export default function Home() {
         }
       }
       useEffect(() => {
-        AllCategories();
-      })
-      useEffect(() => {
-        AllProducts()
-      })
+  AllCategories();
+}, []);
+
+useEffect(() => {
+  AllProducts();
+}, []);
+
   return (
     <div className='overflow-hidden'>
         <HomeSlider />
@@ -51,7 +53,7 @@ export default function Home() {
         <div className="flex justify-center gap-6 mt-4">
           
       {categories.map((category, index) => (
-        <div key={index}  className="cursor-pointer relative w-72 h-48 overflow-hidden shadow-md">
+        <div key={category._id}  className="cursor-pointer relative w-72 h-48 overflow-hidden shadow-md">
           <img
             src={category.photo}
             alt={category.name}
