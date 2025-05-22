@@ -1,0 +1,10 @@
+.top{
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../assessts/slideshow.jpg');
+    /* background-position:center top ; */
+    background-size: cover;
+    overflow: none;
+    background-position: bottom left;
+    /* margin-top: 50px; */
+}

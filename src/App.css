@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    font-family: "Poppins", serif;
+}
+.dark{
+    background-color: #082032;
+    color: #EEEEEE;
+  }
+  .light{
+    background-color: #F4F9F9;
+    color: #555555;
+  }
+  .Bdark{
+    color: #EEEEEE;
+    background-color: #787A91;
+  }
+
+  @layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 1px black;
+    color: transparent;
+  }
+  .text-stroke-white {
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+  }
+}
